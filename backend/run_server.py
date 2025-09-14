@@ -18,20 +18,20 @@ def main():
         sys.exit(1)
     
     # Check if virtual environment exists
-    if not os.path.exists("ml_env"):
+    if not os.path.exists("ml_env_new"):
         print("❌ Error: Virtual environment not found. Please run setup first.")
-        print("   Run: python -m venv ml_env")
-        print("   Then: ml_env\\Scripts\\activate (Windows) or source ml_env/bin/activate (Linux/Mac)")
+        print("   Run: python -m venv ml_env_new")
+        print("   Then: ml_env_new\\Scripts\\activate (Windows) or source ml_env_new/bin/activate (Linux/Mac)")
         sys.exit(1)
     
     # Activate virtual environment and run server
     try:
         if os.name == 'nt':  # Windows
-            activate_script = "ml_env\\Scripts\\activate.bat"
-            python_exe = "ml_env\\Scripts\\python.exe"
+            activate_script = "ml_env_new\\Scripts\\activate.bat"
+            python_exe = "ml_env_new\\Scripts\\python.exe"
         else:  # Linux/Mac
-            activate_script = "source ml_env/bin/activate"
-            python_exe = "ml_env/bin/python"
+            activate_script = "source ml_env_new/bin/activate"
+            python_exe = "ml_env_new/bin/python"
         
         print(f"🐍 Using Python: {python_exe}")
         print("🌐 Server will be available at: http://localhost:8000")
